@@ -10,8 +10,8 @@ public class Heroes2 {
             System.out.println("Please enter name of hero: ");
             String str = scanner.nextLine();
             System.out.print("Please enter age of hero: ");
-            Integer age = scanner.nextInt();
-            System.out.println("Please enter home town of hero: ");
+            Integer age = Integer.parseInt(scanner.nextLine());
+            System.out.print("Please enter home town of hero: ");
             String homeTown = scanner.nextLine();
             set.add(new Hero(str,age,homeTown));
             System.out.println("Currently we have: "+ set );
