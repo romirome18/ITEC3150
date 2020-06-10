@@ -56,10 +56,9 @@ public class Hero implements Comparable {
         return hash;
     }
 
-    @Override
     public int compareTo(Object o) {
         Hero h = (Hero) o;
-        return this.getHomeTown().compareTo( h.getHomeTown() );
+        return (this.getAge() - h.getAge());
     }
 
     @Override
