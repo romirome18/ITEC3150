@@ -89,9 +89,9 @@ public class City implements Comparable{
     @Override
     public int compareTo(Object o) {
         City city = (City) o;
-        Double thisTemp = this.getTemperature();
-        Double thatTemp = city.getTemperature();
-      //  return ((Double) this.getTemperature() ).compareTo(city.getTemperature());
-        return thisTemp.compareTo(thatTemp);
+      //  Double thisTemp = this.getTemperature();
+       // Double thatTemp = city.getTemperature();
+       return ((Double) city.getTemperature() ).compareTo(this.getTemperature());
+       // return thisTemp.compareTo(thatTemp);
     }
 }

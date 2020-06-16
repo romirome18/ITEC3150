@@ -8,7 +8,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-       String[] lines = CityCSVReader.getLines();
+        String[] lines = CityCSVReader.getLines();
         List<City> cities = CityCSVReader.getCities();
         System.out.println(cities);
 
@@ -16,11 +16,11 @@ public class Main {
         City austin = null;
         City atlanta = null;
         for (int i = 0; i < cities.size(); i++) {
-            if (cities.get(i).getState().equals("Oregon")){
+            if (cities.get(i).getState().equals("Oregon")) {
                 salem = cities.get(i);
-            }else if(cities.get(i).getState().equals("Texas")){
+            } else if (cities.get(i).getState().equals("Texas")) {
                 austin = cities.get(i);
-            }else if(cities.get(i).getState().equals("Georgia")){
+            } else if (cities.get(i).getState().equals("Georgia")) {
                 atlanta = cities.get(i);
             }
 
@@ -31,22 +31,42 @@ public class Main {
         WeatherHelper.setWeatherInfo(salem);
         WeatherHelper.setWeatherInfo(austin);
         WeatherHelper.setWeatherInfo(atlanta);
-        System.out.println(salem);
-        System.out.println(austin);
-        System.out.println(atlanta);
+        //System.out.println(salem);
+        //System.out.println(austin);
+        //System.out.println(atlanta);
         List<City> favCities = new ArrayList<City>();
         favCities.add(salem);
         favCities.add(austin);
         favCities.add(atlanta);
         Collections.sort(favCities);
-        Collections.sort(favCities, new Comparator<City>() {
-            @Override
-            public int compare(City o1, City o2) { return o1.getUvIndex()-o2.getUvIndex(); }
-        });
-        System.out.println(favCities);
-        }
 
+        List<City> Cities = new ArrayList<City>();
+        Cities.add(salem);
+        Cities.add(austin);
+        Cities.add(atlanta);
+        Collections.sort(Cities, new Comparator<City>() {
+            @Override
+            public int compare(City o1, City o2) {
+                return o1.getUvIndex() - o2.getUvIndex();
+            }
+        });
+
+
+        System.out.println("Temperature from warmest to coolest " + favCities);
+        System.out.println("UV Index from lowest to highest " + Cities);
+        for (int i = 0; i < cities.size(); i++) {
+            if (cities.get(i).isRaining() == true) {
+
+            }
+
+        }
+    }
 }
+
+
+
+
+
 
 
 
